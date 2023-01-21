@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    display: grid;
+    grid-gap: 0.6em;
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+        'header     header      header'
+        'article    article     sidebar'
+        'article    article     sidebar'
+        'article    article     sidebar'
+        'footer     footer      footer';
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/*HEADER START*/
+.header {
+    background-color: lightgray;
+    grid-area: header;
+    background-image: url(images/header.jpg);
+    background-size: 112em;
+    background-position: center;
+    height: 25em;
+    display:grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 2fr 3fr;
+    align-items: center;
+}
+
+#logo {
+    height: 3.5em;
+    grid-area: 1/1;
+    display: flex;
+    justify-self: center;
+    animation-name: logo;
+    animation-duration: 2s;
+}
+
+@keyframes logo {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.barra {
+    grid-area: 2/1;
+    display:flex;
+    justify-content: space-around;
+    list-style-type: none;
+    color: rgb(97, 97, 97);
+}
+
+.social {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.iconos, .redes{
+    width: 1em;
+    margin-right: 0.4em;
+    filter: invert(38%) sepia(0%) saturate(0%) hue-rotate(266deg) brightness(93%) contrast(85%);
+}
+
+.pagina:hover{
+    background-color: lightgray;
+    padding: 0.5em;
+    border-radius: 10%;
+}
+
+.pagina {
+    grid-area: 3/1;
+    width: 1em;
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+#texto1 {
+    grid-area: 2/2;
+    display:flex;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+    background-color: darkgray;
+    opacity: 0.5;
+    color: rgb(255, 38, 0);
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 2em;
+    height: 4em;
+    animation-name: titulo;
+    animation-duration: 2s;
+}
+
+@keyframes titulo {
+    0% {opacity: 0;}
+    100% {opacity: 0.5;}
+}
+
+/*HEADER END*/
+
+/*MAIN START*/
+.article {
+    background-color: lightgray;
+    grid-area: article;
+    padding: 0.5em;
+    display: grid;
+    grid-gap: 0.8em;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+#section1 , #section2, #section3, #section4 {
+    background-color: rgb(240, 239, 238);
+    padding: 0.5em;
+    margin: 0.4em;
+}
+
+#section1 {grid-area: 1/1;}
+
+#section3 {grid-area: 2/1;}
+
+#section2 {grid-area: 1/2;}
+
+#section4 {grid-area: 2/2;}
+
+#fecha1, #fecha2, #fecha3, #fecha4 {
+    color: yellow;
+    background-size: 100%;
+    background-position: center;
+    height:12em;
+    display: flex;
+    align-items: flex-end;
+}
+
+#fecha1 {background-image: url(images/sakura.jpg);}
+
+#fecha2 {background-image: url(images/comida.jpg);}
+
+#fecha3 {background-image: url(images/fuji.jpg);}
+
+#fecha4 {background-image: url(images/noche.jpg);}
+
+.titulos {
+    background-color: rgb(250, 143, 143);
+    color: white;
+    padding-top: 0.5em;
+    margin-top: 0.2em;
+}
+
+.info {
+    color: rgb(109, 109, 109);
+    column-count: 2;
+    margin: 1em;
+}
+
+.leer{
+    color:gray;
+    font-size: 0.8em;
+    margin: 1em; 
+}
+
+#texto2 {
+    grid-area: 3/span 3;
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+/*MAIN END*/
+
+.sidebar {
+    background-color: lightgray;
+    grid-area: sidebar;
+    text-align: center;
+}
+
+#titulo3 {
+    margin: 2em;
+    font-size: 0.9em;
+}
+
+#texto3 {
+    font-size: 0.8em;
+    margin: 0.8em;
+}
+
+.footer {
+    background-color: rgb(253, 238, 240);
+    color: gray;
+    font-size: 0.8em;
+    grid-area: footer;
+    text-align: center;
+    padding:0.7em;
+}
+
+/*MEDIA QUERY*/
+/*tablet*/
+@media only screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-areas: 
+        'header     header      header'
+        'article    article     article'
+        'article    article     article'
+        'sidebar    sidebar     sidebar'
+        'footer     footer      footer';
+    }
+}
+
+/*mobile*/
+@media only screen and (max-width: 576px) {
+    #logo {height: 2.5em;}
+    .iconos, .redes {width: 0.8em;}
+    .pagina {font-size: 0.8em;}
+    .article {display:block;}
+    #texto1 {
+        font-size: 1.5em;
+        height: 5.4em;
+    }
+}

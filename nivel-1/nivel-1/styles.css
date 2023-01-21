@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 1em;
+}
+
+/*HEADER*/
+header {
+    background-color: black;
+    padding: 0.6em;
+}
+
+nav {
+    background-color: rgb(41, 47, 99);
+    padding: 0.3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lateral, #centro {
+    background-color: rgb(224, 18, 45);
+    padding: 0.7em;
+    margin: 0.3em 1em;
+}
+
+.lateral {
+    width: 20%;
+}
+
+#centro {
+    width: 50%;
+}
+
+#titulo {
+    background-color: rgb(241, 135, 36);
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    justify-content: center;
+}
+
+#titulo2 {
+    background-color: rgb(255, 244, 92);
+    padding: 0.5em;
+    margin: 0.3em 0.8em;
+}
+
+/*CONTENT*/
+main {
+    background-color: black;
+    padding: 0.6em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.6em;
+}
+
+.section {
+    width: 73%;
+    background-color: rgb(80, 77, 94);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.texto1 {
+    background-color:rgb(43, 81, 185);
+    display: flex;
+    width: 46%;
+    padding: 0.5em;
+    margin: 0.5em 0.8em;
+}
+ 
+#texto2 {
+    background-color:rgb(112, 184, 226);
+    width: 96%;
+    padding: 0.5em;
+    margin: 0.5em 0.8em;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: orangered;
+    padding: 0.3em;
+}
+
+.texto3 {
+    background-color: rgb(247, 247, 153);
+    padding: 0.5em;
+    margin: 0.5em 0.8em;
+}
+
+/*FOOTER*/
+footer {
+    background-color: black;
+    text-align: center;
+    margin-top: 0.6em;
+    padding: 0.6em;
+}
+
+#footer1 {
+    background-color: rgb(223, 164, 3);
+    margin: 0.4em;
+    padding: 0.6em;
+}
+
+/*MEDIA QUERIES
+desktop*/
+@media only screen and (min-width: 1200px) {
+    body {
+        width: 1200px;
+        margin: 1em auto;
+    }
+}
+
+/*tablet*/
+@media only screen and (max-width: 768px) {
+    main {
+        display: block;
+        background-color: rgb(255, 230, 0);
+    }
+    .section {
+        width: 100%;
+        padding: 1em 0em;
+    }
+    .sidebar {
+        width: 100%;
+        margin-top: 0.6em;
+    }
+}
+
+/*mobile*/
+@media only screen and (max-width: 576px) {
+    nav, #titulo, .sidebar, .section, .footer {
+        display: block;
+        margin: 1em;
+        width:auto;
+    }
+    .section {
+        background-color: rgb(0, 64, 94);
+    }
+    #centro, .lateral, #titulo2, .texto1, #texto2, .texto3, #footer1{
+        margin: 2em 2em;
+        padding: 1em;
+        width:auto;
+    }
+    .texto1 {
+        background-color:rgb(71, 134, 153);
+    }
+    .texto3 {
+        background-color: orange;
+    }
+}
